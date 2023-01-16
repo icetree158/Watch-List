@@ -1,0 +1,8 @@
+.NavBtn{   
+border: 2px solid;    
+border-radius: 40px;
+
+box-sizing: border-box;
+border-image:  linear-gradient(214deg, rgba(193,92,90,1) , rgba(218,159,158,1)) ;
+border-image-slice: 1;
+}

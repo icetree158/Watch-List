@@ -1,0 +1,61 @@
+.card-container {
+    background: #1F1F1F;
+    width: 100%;    
+   
+    display: flex;
+    flex-direction: column;
+
+    .btn-add {
+        position: absolute;
+        z-index: 2;
+
+    }
+
+    .poster-img {
+        position: relative;
+        align-self: center;
+        width: 100%;
+        
+        height: 225px;
+    }
+
+
+    .mark-container {
+        margin-top: 10px;
+        margin-right: 5px;
+        display: flex;
+        justify-content: flex-end;
+
+
+
+        .mark-img {
+            width: 20px;
+            height: 20px;
+
+
+        }
+
+        span {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+
+            color: #E1E1E1;
+        }
+
+    }
+
+    .name-movie {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: #E1E1E1;
+        padding: 5px;
+        width: 100%;
+    }
+
+}
