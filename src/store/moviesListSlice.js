@@ -11,7 +11,8 @@ const moviesList = createSlice({
 
             state.watchList.push({
                 "name": action.payload.name,
-                "title": action.payload.title
+                "title": action.payload.title,
+                "moviesId":[]
             })
         }
     }

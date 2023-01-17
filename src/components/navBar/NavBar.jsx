@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import './navBar.scss'
 import home from '../../picture/Home.png'
 import history from '../../picture/history.png'
@@ -13,7 +13,7 @@ export default function NavBar() {
   const showDrop =()=>{
     setActive(!activeDrop)
   }
- 
+  
   return (
 
     <header>
