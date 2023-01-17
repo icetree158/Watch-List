@@ -22,7 +22,7 @@ header {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 30;
 
 
     .header-container {
@@ -112,18 +112,29 @@ header {
 
 
         }
-
+        .container-ul::-webkit-scrollbar { width: 0; }
+        .container-ul{
+            width: 100%;
+            overflow-y: scroll;
+           
+            height: calc(100vh - 500px);
         ul {
 
-
+            width: 100%;
             padding-top: 20px;
+           
+           
 
 
             li {
                 @include textStyle;
                 margin-bottom: 10px;
+               align-self: start;
+               cursor: pointer;
+               height: 10%;
             }
         }
+    }
 
         .user {
 

@@ -44,6 +44,9 @@
     }
 .wr-btn{
     width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     .add-List {
         width: 30%;
         font-family: 'Roboto Condensed', sans-serif;
@@ -61,7 +64,12 @@
         
         justify-content: center;
         
-      
+             
+    }
+    .err-mess{
+        @include textStyle;
+        color:#F33F3F;
+        
     }
 }
    

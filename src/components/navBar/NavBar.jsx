@@ -5,8 +5,11 @@ import history from '../../picture/history.png'
 import search from '../../picture/search.png'
 import dots from '../../picture/dot3x.png'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export default function NavBar() {
+  const nameWatchList=useSelector((e)=>e.moviesList.WatchList)
+
   return (
 
     <header>
@@ -27,18 +30,14 @@ export default function NavBar() {
         </Link>
 
         <span className='colections'>Мои колекции</span>
+        <div className='container-ul'>
         <ul>
-
-          <li>
-            asfasfasf
-          </li>
-          <li>
-            asfasfasf
-          </li>
-          <li>
-            asfasfasf
-          </li>
+        {nameWatchList.map((e)=>{
+          return <li key={e.name}>{e.name}</li>
+        })}
+          
         </ul>
+        </div>
         <div className='user'>
           <img className='avatar' src="https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper-thumbnail.png" alt="" />
           <span>Гость</span>
