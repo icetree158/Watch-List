@@ -78,6 +78,7 @@ header {
 
         .link-navBar {
             width: 100%;
+
             .add-List {
                 width: 100%;
                 font-family: 'Roboto Condensed', sans-serif;
@@ -112,29 +113,34 @@ header {
 
 
         }
-        .container-ul::-webkit-scrollbar { width: 0; }
-        .container-ul{
+
+        .container-ul::-webkit-scrollbar {
+            width: 0;
+        }
+
+        .container-ul {
             width: 100%;
             overflow-y: scroll;
-           
+
             height: calc(100vh - 500px);
-        ul {
 
-            width: 100%;
-            padding-top: 20px;
-           
-           
+            ul {
+
+                width: 100%;
+                padding-top: 20px;
 
 
-            li {
-                @include textStyle;
-                margin-bottom: 10px;
-               align-self: start;
-               cursor: pointer;
-               height: 10%;
+
+
+                li {
+                    @include textStyle;
+                    margin-bottom: 10px;
+                    align-self: start;
+                    cursor: pointer;
+                    height: 10%;
+                }
             }
         }
-    }
 
         .user {
 
@@ -158,6 +164,37 @@ header {
                 color: #E1E1E1;
             }
 
+            .dropdown {
+                position: relative;
+                display: inline-block;
+                margin-left: auto;
+                align-self: center;
+                margin-right: 20px;
+
+                .my-drop {
+                    display: none;
+                    position: absolute;
+                    margin-top: -100px ;
+                    margin-left: -70px;
+                    background-color: #332d2d;
+                    min-width: 160px;
+                    border:2px solid #F33F3F;
+                    z-index: 40;
+                    padding: 10px;
+                    border-radius: 5px;
+         
+                }
+
+                .my-drop.show {
+                    display: flex;
+                flex-direction: column;
+                }
+                a{
+                @include textStyle;
+                 line-height: 30px;   
+                }
+            }
+
             .avatar {
                 width: 32px;
                 height: 32px;
@@ -169,9 +206,7 @@ header {
 
             button {
                 display: flex;
-                margin-left: auto;
-                align-items: center;
-                margin-right: 20px;
+
                 @include textStyle;
 
                 img {

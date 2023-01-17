@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './navBar.scss'
 import home from '../../picture/Home.png'
 import history from '../../picture/history.png'
@@ -8,8 +8,12 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 export default function NavBar() {
-  const nameWatchList=useSelector((e)=>e.moviesList.WatchList)
-
+  const nameWatchList=useSelector((e)=>e.moviesList.watchList)
+  const [activeDrop, setActive]=useState(false)
+  const showDrop =()=>{
+    setActive(!activeDrop)
+  }
+ 
   return (
 
     <header>
@@ -39,9 +43,18 @@ export default function NavBar() {
         </ul>
         </div>
         <div className='user'>
+         
           <img className='avatar' src="https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper-thumbnail.png" alt="" />
+          
           <span>Гость</span>
-          <button><img src={dots} alt="" /> </button>
+          <div className='dropdown'>
+          <button onClick={(e)=>showDrop()}><img src={dots} alt="" /> </button>
+          <div className={activeDrop?'my-drop show':'my-drop'}>
+            <Link>Войти</Link>
+            <Link>Зарегистрироваться</Link>
+            <Link></Link>
+          </div>
+          </div>
         </div>
       </div>
     </header>

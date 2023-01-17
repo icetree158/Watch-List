@@ -3,13 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 const moviesList = createSlice({
     name: 'moviesList',
     initialState: {
-        WatchList: []
+        watchList: []
 
     },
     reducers: {
         addList(state, action) {
 
-            state.WatchList.push({
+            state.watchList.push({
                 "name": action.payload.name,
                 "title": action.payload.title
             })
