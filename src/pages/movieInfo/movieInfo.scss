@@ -7,13 +7,23 @@
 
 
 }
+.movie-info-container.load{
+    height:100vh;
+    width: 100%;
+    
+    
+     align-items: center;
+    justify-content: center;
 
+}
 .movie-info-container {
     height: 100vh;
     width: 100%;
     color: white;
     display: flex;
     padding: 20px 60px;
+   
+    justify-content: center;
 
 
 
@@ -58,7 +68,9 @@
 
         .container-score {
             display: flex;
-           
+            align-items: center;
+            margin-top: 55px;
+            justify-content: space-between;
             .rating-kinopoisk {
                 width: 80px;
                 height: 95px;
@@ -69,11 +81,33 @@
                 background: rgba(217, 217, 217, 0.1);
                 border: 1px solid #A41B1B;
                 border-radius: 8px;
-                margin-top: 55px;
+               
                 padding: 15px;
-                .num-rating{
+
+                .num-rating {
                     margin-top: 10px;
                 }
+            }
+
+            .add-to-wachlist {
+                width: 200px;
+                height: 50px;
+                font-family: 'Roboto Condensed', sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 19px;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                color: #141414;
+                background-color: #F33F3F;
+               
+                border-radius: 5px;
+                
+                justify-content: center;
+
+                
             }
         }
     }

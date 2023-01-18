@@ -5,12 +5,19 @@ import './movieInfo.scss'
 import great from "../../picture/great _ 80.png"
 import normal from "../../picture/normal _35 and _80.png"
 import awful from "../../picture/awful _35.png"
+import CircleLoader from '../../components/UI/Loaders/CircleLoader/CircleLoader'
 export default function MovieInfo() {
     const { id } = useParams()
     const [infoMovie, setInfoMovie] = useState({ "genres": [], "nameRu": "", "year": "", "filmLength": "" })
-    console.log(infoMovie)
+    const [isLoad, setIsLoad] = useState(true)
+
     useEffect(() => {
-        getMovieById(id).then(res => setInfoMovie(res))
+        getMovieById(id)
+            .then(res => {
+                setInfoMovie(res)
+                setIsLoad(false)
+            })
+
     }, [id])
     const markMovie = () => {
         let rating = infoMovie.ratingKinopoisk
@@ -29,7 +36,7 @@ export default function MovieInfo() {
                 <img src={normal} alt="normal" />
                 <div className='num-rating'>{rating + "/10"}</div>
             </>
-        if (rating < 4 && rating>0)
+        if (rating < 4 && rating > 0)
             return <>
                 <img src={awful} alt="awful" />
                 <div className='num-rating'>{rating + "/10"}</div>
@@ -40,33 +47,37 @@ export default function MovieInfo() {
     }
 
     return (
-        <div className='movie-info-container'>
-            <img className='porster-img' src={infoMovie.posterUrl} alt={infoMovie.nameRu} />
-            <div className='info-movie'>
-                <span className='title-movie'>{infoMovie.nameRu + ' (' + infoMovie.year + ')'}</span>
-                <div className='genres-time'>
-                    {infoMovie.genres.map(e => {
-                        return e.genre[0].toUpperCase() + e.genre.slice(1) + " "
-                    })}
-                    <span>{Math.trunc(infoMovie.filmLength / 60) + " Ч " + infoMovie.filmLength % 60 + " Мин"}</span>
-                </div>
 
-                <div className='slogan-block'>
-                    <span className='slogan-title'>Описание</span>
-                    <br />
-                    <span className='slogan'>{infoMovie.description}</span>
-                </div>
-                <div className='container-score'>
+        <div className={isLoad?'movie-info-container load':'movie-info-container'}>
+            {isLoad ? <CircleLoader /> : <><img className='porster-img' src={infoMovie.posterUrl} alt={infoMovie.nameRu} />
 
-                    <div className='rating-kinopoisk'>
-
-                        {markMovie()}
-
+                <div className='info-movie'>
+                    <span className='title-movie'>{infoMovie.nameRu + ' (' + infoMovie.year + ')'}</span>
+                    <div className='genres-time'>
+                        {infoMovie.genres.map(e => {
+                            return e.genre[0].toUpperCase() + e.genre.slice(1) + " "
+                        })}
+                        <span>{Math.trunc(infoMovie.filmLength / 60) + " Ч " + infoMovie.filmLength % 60 + " Мин"}</span>
                     </div>
-                    <button></button>
-                </div>
 
-            </div>
+                    <div className='slogan-block'>
+                        <span className='slogan-title'>Описание</span>
+                        <br />
+                        <span className='slogan'>{infoMovie.description}</span>
+                    </div>
+                    <div className='container-score'>
+
+                        <div className='rating-kinopoisk'>
+
+                            {markMovie()}
+
+                        </div>
+                        <button className='add-to-wachlist'>Добавить в коллекцию</button>
+                    </div>
+                </div>
+            </>}
         </div>
+
+
     )
 }

@@ -31,6 +31,7 @@ export default function CreateWatchlist() {
     }
   }
   return (
+    
     <div className='container-create-watchlist'>
       <span className='title-add' >Создайте новую колекцию</span>
       <span className='span-wathlist'>Название</span>

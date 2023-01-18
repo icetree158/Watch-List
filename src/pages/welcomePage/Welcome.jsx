@@ -5,19 +5,22 @@ import Checkmark from '../../picture/Checkmark.png'
 import search from '../../picture/search.png'
 import MovieCard from '../../components/movieCard/MovieCard'
 import getPopularMovies from '../../http/getPopularMovies'
+import DotsLoader from '../../components/UI/Loaders/DotsLoader/DotsLoader'
 export default function Welcome() {
     const [dataMovie, setDataMovie] = useState([])
+    const [load, setLoad] = useState(true)
 
     useEffect(() => {
         getPopularMovies().then(res => {
             setDataMovie(res.items)
-            
+            setLoad(false)
         })
     },[])
 
-    console.log(123)
+
     return (
         <div className='wel-container'>
+            
             <div className='info'>
 
                 <span style={{ color: '#E1E1E1' }}>Добро пожаловать в вашу </span>
@@ -26,6 +29,7 @@ export default function Welcome() {
                     Просматривайте фильмы, добавляйте их в свою колекцию и делитесь ими с друзьями. Просто нажмите <img src={ribbon} alt="ribbon" /> чтобы добавить фильм или <img src={Checkmark} alt="Checkmark" /> пометить фильм как просмотренный.
                 </article>
             </div>
+            
             <div className='input-movies'>
                 <div>
                     <img src={search} alt="search" />
@@ -34,6 +38,7 @@ export default function Welcome() {
                 <button>Найти</button>
             </div>
             <span className='popular-now'>Популярное сейчас</span>
+            {load?<DotsLoader/>:
             <div className='movies-cards'>
                 {dataMovie.map((e)=>{
                     return <MovieCard key={e.kinopoiskId} dataMovie={e}     />
@@ -42,6 +47,7 @@ export default function Welcome() {
                 
 
             </div>
+            }
         </div>
     )
 }

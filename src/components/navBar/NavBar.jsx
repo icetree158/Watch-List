@@ -7,6 +7,7 @@ import dots from '../../picture/dot3x.png'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
+
 export default function NavBar() {
   const nameWatchList=useSelector((e)=>e.moviesList.watchList)
   const [activeDrop, setActive]=useState(false)
@@ -23,6 +24,7 @@ export default function NavBar() {
           <button><img src={search} alt="" /></button>
           <input placeholder='Поиск' />
         </div>
+      
         <Link className='link-navBar' to='/'>
           <button className='nav-btn'> <img src={home} alt="" /> Домой</button>
         </Link>
