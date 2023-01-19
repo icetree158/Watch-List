@@ -1,0 +1,25 @@
+.conainer-inp{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #E1E1E1;
+
+}
+
+.cust-inp {
+    margin-top: 5px;
+    border: 1px solid #E1E1E1;
+    border-radius: 4px;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+}

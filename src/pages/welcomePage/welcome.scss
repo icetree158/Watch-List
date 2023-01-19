@@ -10,7 +10,7 @@
 
 .wel-container {
     margin-top: 35px;
-    width: 100%;
+    width: 1200px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -56,20 +56,23 @@
             display: flex;
             align-items: center;
             width: 100%;
+            height: 100%;
 
             img {
                 padding: 10px;
             }
           input{
             min-width: 95%;
+           
           }
         }
 
         button {
+            box-sizing: border-box;
             background: #F33F3F;
             color: #000000;
             border-radius: 6px;
-            height: 100%;
+            height: 41px;
             min-width: 7%;
         }
     }

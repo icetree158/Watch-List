@@ -35,7 +35,7 @@ export default function Welcome() {
                     <img src={search} alt="search" />
                     <input type="text" placeholder='Поиск фильмов по названию                    ' />
                 </div>
-                <button>Найти</button>
+                <button >Найти</button>
             </div>
             <span className='popular-now'>Популярное сейчас</span>
             {load?<DotsLoader/>:
