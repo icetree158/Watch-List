@@ -1,0 +1,28 @@
+.reg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .reg-wrapper {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .add-cont{
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        .span-add{
+            font-family: 'Roboto Condensed', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            margin-left: 15px;
+            color: white;
+        }
+    }
+    }
+}

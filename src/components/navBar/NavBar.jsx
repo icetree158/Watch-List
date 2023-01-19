@@ -65,7 +65,7 @@ export default function NavBar() {
             <button onClick={(e) => { showDrop(); e.stopPropagation() }}><img src={dots} alt="" /> </button>
             <div className={activeDrop ? 'my-drop show' : 'my-drop'} >
               <Link to='/login'>Войти</Link>
-              <Link>Зарегистрироваться</Link>
+              <Link to='/registration'>Зарегистрироваться</Link>
               <Link></Link>
             </div>
           </div>
