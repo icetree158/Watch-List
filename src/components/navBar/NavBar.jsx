@@ -11,16 +11,17 @@ import { useSelector } from 'react-redux'
 export default function NavBar() {
   const nameWatchList = useSelector((e) => e.moviesList.watchList)
   const [activeDrop, setActive] = useState(false)
+  const avatar = useSelector(e => e.user.avatar.picUrl)
   const showDrop = () => {
     setActive(!activeDrop)
   }
 
-  const clickNotDrop = () => { 
-       setActive(false)
-       
+  const clickNotDrop = () => {
+    setActive(false)
+
   }
   useEffect(() => {
-    document.addEventListener(('click'),clickNotDrop )
+    document.addEventListener(('click'), clickNotDrop)
 
     return () => {
       document.removeEventListener(('click'), clickNotDrop)
@@ -58,8 +59,9 @@ export default function NavBar() {
         </div>
         <div className='user'>
 
-          <img className='avatar' src="https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper-thumbnail.png" alt="" />
-
+          {!avatar?<img className='avatar' src="https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper-thumbnail.png" alt="" />
+          :<img className='avatar' src={avatar} alt="" />}
+        
           <span>Гость</span>
           <div className='dropdown'>
             <button onClick={(e) => { showDrop(); e.stopPropagation() }}><img src={dots} alt="" /> </button>

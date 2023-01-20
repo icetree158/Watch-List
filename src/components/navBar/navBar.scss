@@ -170,7 +170,8 @@ header {
                 margin-left: auto;
                 align-self: center;
                 margin-right: 20px;
-
+                
+              
                 .my-drop {
                     display: none;
                     position: absolute;
@@ -206,7 +207,7 @@ header {
 
             button {
                 display: flex;
-
+                height:30px;
                 @include textStyle;
 
                 img {
