@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from "react-router-dom";
 
 import CreateWatchlist from '../pages/createWathlist/CreateWatchlist';
+import EditProfile from '../pages/editProfile/EditProfile';
 import Login from '../pages/login/Login';
 import MainPage from '../pages/MainPage';
 import MovieInfo from '../pages/movieInfo/MovieInfo';
@@ -19,6 +20,7 @@ export default function RouterNav() {
                     <Route path='movie/:id' element={<MovieInfo />} />
                     <Route path='login' element={<Login />} />
                     <Route path='registration' element={<Registration />} />
+                    <Route path='editprofile' element={<EditProfile />} />
                 </Route>
             </Routes>
         </>

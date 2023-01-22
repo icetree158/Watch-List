@@ -1,0 +1,110 @@
+.edit-profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+
+
+    .edit-profile-wrapper {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .continer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 20px;
+            width: 70%;
+
+
+            .edit-span {
+                color: white;
+
+                font-family: 'Roboto Condensed', sans-serif;
+                font-size: 25px;
+                font-weight: 700;
+                line-height: 44px;
+                letter-spacing: 0em;
+                text-align: center;
+                
+
+
+            }
+
+            .btn-logout {
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                
+                color: #F33F3F;
+                text-align: center;
+                
+            }
+        }
+
+
+        .preavatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+        .add-cont {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+
+            .file-click {
+                background: url(../../picture/Vector.png) no-repeat;
+                width: 35px;
+                height: 25px;
+            }
+
+            .file-inp {
+
+                opacity: 0;
+                height: 0;
+                width: 0;
+                padding: 0;
+                margin: 0;
+                line-height: 0;
+                overflow: hidden;
+            }
+
+
+
+            .span-add {
+                font-family: 'Roboto Condensed', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                margin-left: 15px;
+                color: white;
+                cursor: pointer;
+            }
+        }
+
+        .form-btn {
+            width: 85%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .err-mess {
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                color: #F33F3F;
+            }
+        }
+    }
+}

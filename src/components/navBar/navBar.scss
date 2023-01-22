@@ -18,7 +18,7 @@ header {
     background: rgba(0, 0, 0, 1);
     height: 100vh;
     width: 25%;
-    position: relative;
+    
     position: fixed;
     left: 0;
     top: 0;
@@ -151,7 +151,9 @@ header {
             border: 1px solid #E1E1E1;
             border-radius: 4px;
             display: flex;
-
+            .nameuser{
+                display: flex;
+                align-items: center;
             span {
                 font-family: 'Roboto', sans-serif;
                 font-style: normal;
@@ -163,6 +165,7 @@ header {
                 text-align: center;
                 color: #E1E1E1;
             }
+        }
 
             .dropdown {
                 position: relative;

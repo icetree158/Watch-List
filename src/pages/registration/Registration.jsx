@@ -3,7 +3,7 @@ import CustomInput from '../../components/UI/input/CustomInput'
 import RedBtn from '../../components/UI/red-btn/RedBtn'
 import './registration.scss'
 import fakeAvatar from '../../picture/Group 105.png'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setAvatar, SetRegistration } from '../../store/userSlice'
 
 export default function Registration() {

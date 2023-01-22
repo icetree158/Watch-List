@@ -4,7 +4,7 @@ import './movieCard.scss'
 import { Link } from 'react-router-dom'
 export default function MovieCard({ dataMovie }) {
 
-    console.log(dataMovie)
+
 
     return (
         <Link to={'movie/'+dataMovie.kinopoiskId}>  

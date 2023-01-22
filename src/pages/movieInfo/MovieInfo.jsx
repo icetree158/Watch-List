@@ -11,7 +11,7 @@ export default function MovieInfo() {
     const [infoMovie, setInfoMovie] = useState({ "genres": [], "nameRu": "", "year": "", "filmLength": "" })
     const [isLoad, setIsLoad] = useState(true)
     const [color, setColor] = useState()
-
+   
     useEffect(() => {
         getMovieById(id)
             .then(res => {
@@ -29,8 +29,8 @@ export default function MovieInfo() {
             rating = infoMovie.ratingImdb
         }
         if (rating >= 8) setColor('green')
-        if (rating < 8 && rating > 4) setColor('yellow')
-        if (rating < 4 && rating > 0) setColor('red')
+        if (rating < 8 && rating > 5) setColor('yellow')
+        if (rating < 5 && rating > 0) setColor('red')
     }
 
     const markMovie = () => {
@@ -48,7 +48,7 @@ export default function MovieInfo() {
 
             </>
         }
-        if (rating < 8 && rating > 4) {
+        if (rating < 8 && rating > 5) {
 
             return <>
                 <img src={normal} alt="normal" />
@@ -56,7 +56,7 @@ export default function MovieInfo() {
 
             </>
         }
-        if (rating < 4 && rating > 0) {
+        if (rating < 5 && rating > 0) {
 
             return <>
                 <img src={awful} alt="awful" />

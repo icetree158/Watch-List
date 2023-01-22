@@ -5,13 +5,15 @@ import history from '../../picture/history.png'
 import search from '../../picture/search.png'
 import dots from '../../picture/dot3x.png'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { setAuth } from '../../store/userSlice'
 
 
 export default function NavBar() {
   const nameWatchList = useSelector((e) => e.moviesList.watchList)
   const [activeDrop, setActive] = useState(false)
-  const avatar = useSelector(e => e.user.avatar.picUrl)
+  const user = useSelector(e => e.user)
+  const dispatch = useDispatch()
   const showDrop = () => {
     setActive(!activeDrop)
   }
@@ -28,6 +30,10 @@ export default function NavBar() {
     }
   }, [])
 
+  const logOut = () => {
+    dispatch(setAuth())
+
+  }
   return (
 
     <header>
@@ -59,16 +65,21 @@ export default function NavBar() {
         </div>
         <div className='user'>
 
-          {!avatar?<img className='avatar' src="https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper-thumbnail.png" alt="" />
-          :<img className='avatar' src={avatar} alt="" />}
-        
-          <span>Гость</span>
+          {user.avatar.picUrl && user.isAuth ? <img className='avatar' src={user.avatar.picUrl} alt="" />
+            : <img className='avatar' src="https://e7.pngegg.com/pngimages/84/165/png-clipart-united-states-avatar-organization-information-user-avatar-service-computer-wallpaper-thumbnail.png" alt="" />
+          }
+          {user.name && user.isAuth ?
+            <Link className='nameuser' to='editprofile'><span>{user.name}</span></Link>
+            : <Link className='nameuser' to='registration'><span>Гость</span></Link>}
           <div className='dropdown'>
             <button onClick={(e) => { showDrop(); e.stopPropagation() }}><img src={dots} alt="" /> </button>
             <div className={activeDrop ? 'my-drop show' : 'my-drop'} >
-              <Link to='/login'>Войти</Link>
-              <Link to='/registration'>Зарегистрироваться</Link>
-              <Link></Link>
+              {user.isAuth ?
+                <Link to='/' onClick={logOut}>Выйти</Link>
+                :
+                <><Link to='login'>Войти</Link>
+                  <Link to='registration'>Зарегистрироваться</Link>
+                </>}
             </div>
           </div>
         </div>
