@@ -26,7 +26,7 @@ export default function CreateWatchlist() {
         "name": nameWatchList,
         "title": titleWatchList
       }))
-
+      setModal(true)
       setErr('')
     }
   }

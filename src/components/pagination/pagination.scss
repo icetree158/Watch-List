@@ -1,0 +1,20 @@
+.buttons-page {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+    justify-content: space-evenly;
+
+    .redbtn {
+        min-width: 30px;
+        margin-left: 5px;
+    }
+
+    .redbtn.active {
+        background-color: #A41B1B;
+    }
+
+    .redbtn:hover {
+        background-color: #a41b1b86;
+    }
+
+}

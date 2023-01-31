@@ -58,7 +58,7 @@ export default function NavBar() {
         <div className='container-ul'>
           <ul>
             {nameWatchList.map((e) => {
-              return <li key={e.name}>{e.name}</li>
+              return <Link to={'watchList/'+e.name} key={e.name}> <li >{e.name}</li></Link>
             })}
 
           </ul>

@@ -8,10 +8,10 @@ import awful from "../../picture/awful _35.png"
 import CircleLoader from '../../components/UI/Loaders/CircleLoader/CircleLoader'
 export default function MovieInfo() {
     const { id } = useParams()
-    const [infoMovie, setInfoMovie] = useState({ "genres": [], "nameRu": "", "year": "", "filmLength": "" })
+    const [infoMovie, setInfoMovie] = useState({ "genres": [], "nameRu": "", "year": "", "filmLength": "","ratingAgeLimits":"" })
     const [isLoad, setIsLoad] = useState(true)
     const [color, setColor] = useState()
-   
+    console.log(infoMovie)
     useEffect(() => {
         getMovieById(id)
             .then(res => {
@@ -81,6 +81,9 @@ export default function MovieInfo() {
                             return e.genre[0].toUpperCase() + e.genre.slice(1) + " "
                         })}
                         <span>{Math.trunc(infoMovie.filmLength / 60) + " Ч " + infoMovie.filmLength % 60 + " Мин"}</span>
+                        <br />
+                       { infoMovie.ratingAgeLimits? <div className='age-ocntainer'> <span className='ageSpan'>{' +' + infoMovie.ratingAgeLimits.slice(3)}</span></div>
+                       :null}
                     </div>
 
                     <div className='slogan-block'>
@@ -90,15 +93,18 @@ export default function MovieInfo() {
                     </div>
                     <div className='container-score'>
 
-                        <div className= {'rating-kinopoisk '+color}>
+                        <div className={'rating-kinopoisk ' + color}>
 
                             {markMovie()}
 
                         </div>
+
                         <button className='add-to-wachlist'>Добавить в коллекцию</button>
                     </div>
+
                 </div>
             </>}
+
         </div>
 
 

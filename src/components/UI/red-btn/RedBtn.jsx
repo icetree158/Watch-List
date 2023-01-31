@@ -1,8 +1,10 @@
 import React from 'react'
-import classes from './redBtn.module.scss'
+import './redBtn.scss'
 
-export default function RedBtn({children,...props}) {
+export default function RedBtn({ children, ...props }) {
+    
     return (
-        <button{...props} className={classes.redbtn}>{children}</button>
+        <button {...props} className={props.className ? props.className : "redbtn"}>{children}
+        </button>
     )
 }
