@@ -1,5 +1,5 @@
 
-export default async function getMovieByKeyWord(keyword,page) {
+export default async function getMovieByKeyWord(keyword, page) {
     const res = await fetch(
         `https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=${keyword}&page=${page}`,
         {
@@ -9,7 +9,15 @@ export default async function getMovieByKeyWord(keyword,page) {
             }
         }
     )
-    const resData= await res.json()
-    
+    const resData = await res.json()
+
+    for (let i = 0; i < resData.films.length; i++) {
+
+        if (resData.films[i].genres.some((e) =>e.genre.toLowerCase() === 'для взрослых')) {
+             resData.films.splice(i,1)
+           
+        }
+
+    }
     return resData
 }
