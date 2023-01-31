@@ -11,7 +11,7 @@ export default function CreateWatchlist() {
   const [modal, setModal] = useState(false)
   const [err, setErr] = useState('')
   const nameMovies = useSelector(e => e.moviesList.watchList)
-  console.log(nameMovies)
+
 
   const addWatchList = () => {
     if (nameWatchList.length === 0 || titleWatchList.length === 0) {

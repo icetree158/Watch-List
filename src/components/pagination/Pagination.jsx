@@ -9,8 +9,8 @@ export default function Pagination({ pages, curpage, setCurPage }) {
 
         const arr = []
         let lastPage
-
-        if (pages / 20 > 20) {
+        console.log(pages)
+        if (pages > 20) {
             lastPage = 20
         } else lastPage = Math.ceil(pages)
 
