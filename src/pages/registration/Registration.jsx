@@ -5,6 +5,7 @@ import './registration.scss'
 import fakeAvatar from '../../picture/Group 105.png'
 import { useDispatch } from 'react-redux'
 import { setAvatar, SetRegistration } from '../../store/userSlice'
+import { useNavigate } from 'react-router-dom'
 
 export default function Registration() {
     const filePicer = useRef(null)
@@ -14,7 +15,7 @@ export default function Registration() {
     const [email, setEmail] = useState('')
     const [password, setpassword] = useState('')
     const [err, setErr] = useState('')
-
+    const navigate = useNavigate()
     const clickload = () => {
         filePicer.current.click()
     }
@@ -34,9 +35,11 @@ export default function Registration() {
         if (name && email && password) {
             dispatch(SetRegistration({ "name": name, "email": email, "password": password }))
             setErr('')
+            navigate('/')
+
         } else setErr("Есть пустые поля...")
 
-        if (preview) dispatch(setAvatar(preview))
+        if (preview.picUrl) dispatch(setAvatar(preview))
     }
     return (
         <div className='reg-container'>
@@ -48,7 +51,7 @@ export default function Registration() {
                     <span className='span-add' onClick={clickload} > Добавить фото</span>
                 </div>
                 <CustomInput onChange={e => setName(e.target.value)}>Имя*</CustomInput>
-                <CustomInput onChange={e => setEmail(e.target.value)} >Email*</CustomInput>
+                <CustomInput type='email' onChange={e => setEmail(e.target.value)} >Email*</CustomInput>
                 <CustomInput type='password' onChange={e => setpassword(e.target.value)} >Пароль*</CustomInput>
                 <div className='form-btn'>
 

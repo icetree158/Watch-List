@@ -28,6 +28,8 @@ export default function CreateWatchlist() {
       }))
       setModal(true)
       setErr('')
+      settitleWatchList('')
+      setnameWatchList('')
     }
   }
   return (
@@ -35,14 +37,14 @@ export default function CreateWatchlist() {
     <div className='container-create-watchlist'>
       <span className='title-add' >Создайте новую колекцию</span>
       <span className='span-wathlist'>Название</span>
-      <input className='input-watchlist' type="text" onChange={(e) => setnameWatchList(e.target.value)} />
+      <input className='input-watchlist' type="text" value={nameWatchList} onChange={(e) => setnameWatchList(e.target.value)} />
       <span className='span-wathlist'>Описание</span>
-      <input className='input-watchlist' type="text" onChange={(e) => settitleWatchList(e.target.value)} />
+      <input className='input-watchlist' type="text" value={titleWatchList} onChange={(e) => settitleWatchList(e.target.value)} />
       <div className='wr-btn'>
         <button className='add-List' onClick={addWatchList}>Создать коллекцию</button>
         <span className='err-mess'>{err}</span>
       </div>
-      <Modal active={modal} setActive={setModal} title="Ну добавил ты и что дальше?">
+      <Modal active={modal} setActive={setModal} title="Коллекция созданна успешно">
 
       </Modal>
     </div>

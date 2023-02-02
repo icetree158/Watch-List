@@ -32,14 +32,14 @@ export default function Welcome() {
 
     }, [curpage,searchInp])
 
-
+    
 
     const searchmovies=() => {
 
 
         if (searchInp.current.value){
             setLoad(true)
-         getMovieByKeyWord(searchInp.current.value, curpage).then(e => {
+       getMovieByKeyWord(searchInp.current.value, curpage).then(e => {
             setDataMovie(e.films)
             setPages(e.pagesCount)
             setLoad(false)

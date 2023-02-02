@@ -11,7 +11,7 @@ export default function MovieInfo() {
     const [infoMovie, setInfoMovie] = useState({ "genres": [], "nameRu": "", "year": "", "filmLength": "","ratingAgeLimits":"" })
     const [isLoad, setIsLoad] = useState(true)
     const [color, setColor] = useState()
-    console.log(infoMovie)
+   
     useEffect(() => {
         getMovieById(id)
             .then(res => {

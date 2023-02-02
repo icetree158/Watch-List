@@ -16,7 +16,7 @@ const user = createSlice({
             state.isAuth = !state.isAuth
         },
         setAvatar(state, action) {
-          
+           
             state.avatar = action.payload
         },
         SetRegistration(state,action){

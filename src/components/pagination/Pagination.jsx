@@ -9,7 +9,7 @@ export default function Pagination({ pages, curpage, setCurPage }) {
 
         const arr = []
         let lastPage
-        console.log(pages)
+      
         if (pages > 20) {
             lastPage = 20
         } else lastPage = Math.ceil(pages)
@@ -56,7 +56,7 @@ export default function Pagination({ pages, curpage, setCurPage }) {
         }
         if (curpage + 3 >= lastPage && pages > 10) {
 
-            for (let i = lastPage - 8; i < lastPage; i++) {
+            for (let i = lastPage - 7; i <= lastPage; i++) {
                 arr.push(i)
             }
             arr.unshift(firsPage)
