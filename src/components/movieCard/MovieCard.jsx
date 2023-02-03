@@ -2,27 +2,30 @@ import React from 'react'
 import ribbon from '../../picture/ribbon.png'
 import './movieCard.scss'
 import { Link } from 'react-router-dom'
-export default function MovieCard({ dataMovie, id }) {
 
-    if (dataMovie.nameRu) {
+export default function MovieCard({ dataMovie, id,setActiveCard }) {
+
+     if (dataMovie.nameRu) {
         return (
-            <Link to={'movie/' + id}>
-                <div className='card-container'>
 
-                    <div>
-                        <button className='btn-add'> <img src={ribbon} alt="" /></button>
-                        <img className='poster-img' src={dataMovie.posterUrlPreview} alt="" />
+            <div className='card-container'>
 
-                    </div>
+                <div>
+                    <button className='btn-add' onClick={e=>setActiveCard(dataMovie)}> <img src={ribbon} alt="" /></button>
+                    <img className='poster-img' src={dataMovie.posterUrlPreview} alt="" />
 
+                </div>
+                <Link to={'movie/' + id}>
                     <div className='name-movie'>
                         {dataMovie.nameRu}
                         <br />
                         ({dataMovie.year})
 
                     </div>
-                </div>
-            </Link>
+                </Link>
+                
+            </div>
+
 
         )
     } else return null

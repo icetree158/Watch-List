@@ -3,8 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const moviesList = createSlice({
     name: 'moviesList',
     initialState: {
-        watchList: []
-
+        watchList: [],
+        addedMovies:[],
+        watchedMovies:[]
     },
     reducers: {
         addList(state, action) {
@@ -14,8 +15,13 @@ const moviesList = createSlice({
                 "title": action.payload.title,
                 "movies":[]
             })
+        },
+        addMovie(state,action){
+           state.watchList[action.payload.numArr].movies.push(action.payload.infoMovie)
+           state.watchList.addedMovies.push(action.payload.infoMovie.kinopoiskId)
+        
         }
     }
 })
-export const { addList } = moviesList.actions
+export const { addList,addMovie } = moviesList.actions
 export default moviesList.reducer
