@@ -8,10 +8,10 @@ import awful from "../../picture/awful _35.png"
 import CircleLoader from '../../components/UI/Loaders/CircleLoader/CircleLoader'
 export default function MovieInfo() {
     const { id } = useParams()
-    const [infoMovie, setInfoMovie] = useState({ "genres": [], "nameRu": "", "year": "", "filmLength": "","ratingAgeLimits":"" })
+    const [infoMovie, setInfoMovie] = useState({ "genres": [], "nameRu": "", "year": "", "filmLength": "", "ratingAgeLimits": "" })
     const [isLoad, setIsLoad] = useState(true)
     const [color, setColor] = useState()
-   
+
     useEffect(() => {
         getMovieById(id)
             .then(res => {
@@ -80,10 +80,11 @@ export default function MovieInfo() {
                         {infoMovie.genres.map(e => {
                             return e.genre[0].toUpperCase() + e.genre.slice(1) + " "
                         })}
-                        <span>{Math.trunc(infoMovie.filmLength / 60) + " Ч " + infoMovie.filmLength % 60 + " Мин"}</span>
+                        {infoMovie.filmLength ? <span>{Math.trunc(infoMovie.filmLength / 60) + " Ч " + infoMovie.filmLength % 60 + " Мин"}</span>
+                            : ""}
                         <br />
-                       { infoMovie.ratingAgeLimits? <div className='age-ocntainer'> <span className='ageSpan'>{' +' + infoMovie.ratingAgeLimits.slice(3)}</span></div>
-                       :null}
+                        {infoMovie.ratingAgeLimits ? <div className='age-ocntainer'> <span className='ageSpan'>{' +' + infoMovie.ratingAgeLimits.slice(3)}</span></div>
+                            : null}
                     </div>
 
                     <div className='slogan-block'>
