@@ -20,12 +20,12 @@ export default function Welcome() {
     const [title, setTitle] = useState('Популярное сейчас')
     const [pages, setPages] = useState()
     const [curpage, setCurPage] = useState()
-    const [activeCard, setActiveCard] = useState({ 'kinopoiskId': '' })
+    const [activeCard, setActiveCard] = useState({})
     const [modal, setModal] = useState(false)
     const searchInp = useRef()
     const watchLists = useSelector((e) => e.moviesList.watchList)
     const dispath = useDispatch()
-    console.log(watchLists)
+    
     useEffect(() => {
         setLoad(true)
         getPopularMovies().then(res => {
@@ -40,14 +40,6 @@ export default function Welcome() {
 
     }, [curpage, searchInp])
 
-    useEffect(() => {
-
-        if (activeCard.kinopoiskId > 1) {
-            setModal(true)
-
-        }
-
-    }, [activeCard])
 
     const searchmovies = () => {
         if (searchInp.current.value) {
@@ -101,7 +93,7 @@ export default function Welcome() {
                     <div className='movies-cards'>
                         {dataMovie.length ?
                             dataMovie.map((e) => {
-                                return <MovieCard setActiveCard={setActiveCard} key={e.filmId ? e.filmId : e.kinopoiskId} dataMovie={e} id={e.kinopoiskId ? e.kinopoiskId : e.filmId} />
+                                return <MovieCard setModal={setModal} setActiveCard={setActiveCard} key={e.filmId ? e.filmId : e.kinopoiskId} dataMovie={e} id={e.kinopoiskId ? e.kinopoiskId : e.filmId} />
                             })
                             : <span>Ничего не найдено </span>
                         }

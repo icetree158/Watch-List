@@ -18,7 +18,7 @@ const moviesList = createSlice({
         },
         addMovie(state,action){
            state.watchList[action.payload.numArr].movies.push(action.payload.infoMovie)
-           state.watchList.addedMovies.push(action.payload.infoMovie.kinopoiskId)
+           state.addedMovies.push(action.payload.infoMovie.filmId?action.payload.infoMovie.filmId:action.payload.infoMovie.kinopoiskId)
         
         }
     }

@@ -45,4 +45,10 @@
         width: 60%;
         align-self: flex-start;
     }
+    .movies-container{
+        margin-top: 70px;
+        display: grid;
+        gap: 40px;
+        grid-template-columns: repeat(5, 1fr);
+    }
 }

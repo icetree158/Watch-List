@@ -49,7 +49,7 @@ export default function EditProfile() {
                 'email': email,
             }))
             if (preview.picUrl) {
-                console.log(preview)
+              
                 dispatch(setAvatar(preview))
             }
             navigate('/')
