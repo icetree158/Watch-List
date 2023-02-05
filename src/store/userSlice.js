@@ -14,6 +14,7 @@ const user = createSlice({
     reducers: {
         setAuth(state, action) {
             state.isAuth = !state.isAuth
+            state.avatar={}
         },
         setAvatar(state, action) {
            

@@ -6,11 +6,13 @@ import great from "../../picture/great _ 80.png"
 import normal from "../../picture/normal _35 and _80.png"
 import awful from "../../picture/awful _35.png"
 import CircleLoader from '../../components/UI/Loaders/CircleLoader/CircleLoader'
+import { useSelector } from 'react-redux'
 export default function MovieInfo() {
     const { id } = useParams()
     const [infoMovie, setInfoMovie] = useState({ "genres": [], "nameRu": "", "year": "", "filmLength": "", "ratingAgeLimits": "" })
     const [isLoad, setIsLoad] = useState(true)
     const [color, setColor] = useState()
+    const addedmovies = useSelector(e => e.moviesList.addedMovies)
 
     useEffect(() => {
         getMovieById(id)
@@ -68,6 +70,12 @@ export default function MovieInfo() {
         if (!rating) return "Этот фильм еще не оценили"
 
     }
+    const checkAdd = () => {
+        if (addedmovies.includes(Number(id))) {
+            return 
+        } else { return  <button className='add-to-wachlist'>Добавить в коллекцию</button> }
+
+    }
 
     return (
 
@@ -100,7 +108,7 @@ export default function MovieInfo() {
 
                         </div>
 
-                        <button className='add-to-wachlist'>Добавить в коллекцию</button>
+                        {checkAdd()}
                     </div>
 
                 </div>

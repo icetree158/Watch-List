@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import './welcome.scss'
 import ribbon from '../../picture/ribbon.png'
-import Checkmark from '../../picture/Checkmark.png'
 import search from '../../picture/search.png'
 import MovieCard from '../../components/movieCard/MovieCard'
 import getPopularMovies from '../../http/getPopularMovies'
@@ -75,7 +74,7 @@ export default function Welcome() {
                 <span style={{ color: '#E1E1E1' }}>Добро пожаловать в вашу </span>
                 <span style={{ color: '#F33F3F' }}>Колекцию фильмов</span>
                 <article className='info-use'>
-                    Просматривайте фильмы, добавляйте их в свою колекцию и делитесь ими с друзьями. Просто нажмите  <img src={ribbon} alt="" /> чтобы добавить фильм или <img src={Checkmark} alt="Checkmark" />  пометить фильм как просмотренный.
+                    Просматривайте фильмы, добавляйте их в свою колекцию и делитесь ими с друзьями. Просто нажмите  <img src={ribbon} alt="" /> чтобы добавить фильм.
                 </article>
             </div>
 
@@ -95,7 +94,7 @@ export default function Welcome() {
                             dataMovie.map((e) => {
                                 return <MovieCard setModal={setModal} setActiveCard={setActiveCard} key={e.filmId ? e.filmId : e.kinopoiskId} dataMovie={e} id={e.kinopoiskId ? e.kinopoiskId : e.filmId} />
                             })
-                            : <span>Ничего не найдено </span>
+                            : <span style={{color:"white"}}>Ничего не найдено </span>
                         }
 
 

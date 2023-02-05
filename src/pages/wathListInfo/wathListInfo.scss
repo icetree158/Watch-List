@@ -15,8 +15,9 @@
 
     .label-wathlist {
         position: relative;
-       padding-top: 5px;
-       align-self: flex-start;
+        padding-top: 5px;
+        align-self: flex-start;
+
         .name-watchlist {
             font-family: 'Roboto Condensed', sans-serif;
             font-style: normal;
@@ -36,19 +37,22 @@
             top: 0;
             right: -80px;
             z-index: 2;
-           
+
         }
     }
-    .info-container{
-        display:flex;
+
+    .info-container {
+        display: flex;
         margin-top: 70px;
         width: 60%;
         align-self: flex-start;
     }
-    .movies-container{
+
+    .movies-container {
         margin-top: 70px;
-        display: grid;
+        display: flex;
         gap: 40px;
-        grid-template-columns: repeat(5, 1fr);
+        flex-wrap: wrap;
+        
     }
 }

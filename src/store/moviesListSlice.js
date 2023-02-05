@@ -5,7 +5,7 @@ const moviesList = createSlice({
     initialState: {
         watchList: [],
         addedMovies:[],
-        watchedMovies:[]
+        
     },
     reducers: {
         addList(state, action) {

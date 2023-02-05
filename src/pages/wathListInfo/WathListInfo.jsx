@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import './wathListInfo.scss'
 import edit from '../../picture/Edit 1.png'
 import CardContainer from '../../components/UI/cardContainer/CardContainer'
@@ -38,20 +38,24 @@ export default function WathListInfo() {
         Описание:
         <br />
         <h3 className='title-watchlist'>{infoWatchlist.title}</h3>
-        <button className='edit-btn'>
-          <img src={edit} alt="" />
-        </button>
+        <Link to='edit' className='edit-btn'>
+          <img src={edit} alt="edit" />
+        </Link>
       </div>
-      <div className='info-container'>
-        <CardContainer title={'Всего фильмов'} entry={infoWatchlist.movies.length} />
-        <CardContainer title={'Осталось просмотреть'} entry={timeWathing()} style={{ marginLeft: '20px' }} />
-      </div>
-      <div className='movies-container'>
-        {infoWatchlist.movies.map((e, i) => {
-          return <MovieCard dataMovie={e} id={e.kinopoiskId ? e.kinopoiskId : e.filmId} key={i} ></MovieCard>
-        })}
-      </div>
-
+      {infoWatchlist.movies.length ?
+        <>
+          <div className='info-container'>
+            <CardContainer title={'Всего фильмов'} entry={infoWatchlist.movies.length} />
+            <CardContainer title={'Общая длительность'} entry={timeWathing()} style={{ marginLeft: '20px' }} />
+          </div>
+          <div className='movies-container'>
+            {infoWatchlist.movies.map((e, i) => {
+              return <MovieCard dataMovie={e} id={e.kinopoiskId ? e.kinopoiskId : e.filmId} key={i} ></MovieCard>
+            })}
+          </div>
+        </>
+        : <Link style={{color:'#f33f3f'}} to='/'>Пока здесь пусто... Хотите что-то добавить?</Link>
+      }
 
 
 

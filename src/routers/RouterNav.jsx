@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import CreateWatchlist from '../pages/createWathlist/CreateWatchlist';
 import EditProfile from '../pages/editProfile/EditProfile';
+import EditWatchList from '../pages/editWatchList/EditWatchList';
 import Login from '../pages/login/Login';
 import MainPage from '../pages/MainPage';
 import MovieInfo from '../pages/movieInfo/MovieInfo';
@@ -24,6 +25,7 @@ export default function RouterNav() {
                     <Route path='editprofile' element={<EditProfile />} />
                     <Route path='wathList' element={<EditProfile />} />
                     <Route path='watchList/:name' element={<WathListInfo/>} />
+                    <Route path='watchList/:name/edit' element={<EditWatchList/>} />
                 </Route>
             </Routes>
         </>

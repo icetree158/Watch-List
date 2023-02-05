@@ -39,6 +39,8 @@ export default function EditProfile() {
 
     const logout = () => {
         dispatch(setAuth())
+        SetPreview({ 'picUrl': '' })
+        setavatar('')
         navigate('/')
     }
     const acceptEdit = () => {
@@ -66,7 +68,7 @@ export default function EditProfile() {
                     <div className='edit-span'>Редактирование профиля</div>
                     <button onClick={logout} className='btn-logout'>Выйти</button>
                 </div>
-                {avatar ? <img className='preavatar' src={preview.picUrl ? preview.picUrl : avatar} alt="avatar" /> : <img className='preavatar' src={fakeAvatar} alt="avatar" />}
+                {avatar || preview.picUrl.length ? <img className='preavatar' src={preview.picUrl ? preview.picUrl : avatar} alt="avatar" /> : <img className='preavatar' src={fakeAvatar} alt="avatar" />}
                 <div className='add-cont'>
                     <button className='file-click' onClick={clickload}></button>
                     <input className='file-inp' ref={filePicer} onChange={loadFile} type='file' accept='image/*, .png, .jpg, .swg, .jpeg' />
