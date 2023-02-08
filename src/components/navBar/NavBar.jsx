@@ -50,15 +50,15 @@ export default function NavBar() {
 
 
         <button className='nav-btn'> <img src={history} alt="" /> История</button>
-        <Link className='link-navBar' to='addWathlist'>
+        <Link className='link-navBar' to='/addWatchList'>
           <button className='add-List'>+ Добавить колекцию</button>
         </Link>
 
         <span className='colections'>Мои колекции</span>
         <div className='container-ul'>
           <ul>
-            {nameWatchList.map((e) => {
-              return <Link to={'watchList/'+e.name} key={e.name}> <li >{e.name}</li></Link>
+            {nameWatchList.map((e,i) => {
+              return <Link to={'watchList/'+e.name} key={i}> <li >{e.name}</li></Link>
             })}
 
           </ul>

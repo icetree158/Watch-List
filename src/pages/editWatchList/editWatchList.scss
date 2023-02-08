@@ -50,12 +50,16 @@
     .mov-section {
         width: 85%;
         border: 1px solid #E1E1E1;
-        border-left: none;
+       
         border-radius: 4px;
         display: flex;
         align-items: center;
         margin-bottom: 8px;
-
+        .link-movie{
+            color: white;
+            display: flex;
+            align-items: center;
+        }
         .mini-poster {
             width: 50px;
             height: 75px;
@@ -71,6 +75,9 @@
             border: 1px #F33F3F solid;
             border-radius: 4px;
             justify-content: flex-end;
+        }
+        .btn-del-mov:hover{
+            background-color: #F33F3F;
         }
     }
 }

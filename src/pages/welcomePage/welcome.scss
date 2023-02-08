@@ -87,12 +87,13 @@
     }
 
     .movies-cards {
-        width: 100%;
-        padding-right: 20px;
         display: flex;
-        justify-content: center;
-        gap: 20px;
+        gap: 10px;
         flex-wrap: wrap;
+        width: 85%; 
+        justify-content: center;
+        
+        
 
 
 

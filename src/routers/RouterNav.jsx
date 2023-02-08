@@ -18,7 +18,7 @@ export default function RouterNav() {
             <Routes>
                 <Route path='/' element={<MainPage />} >
                     <Route index element={<Welcome />} />
-                    <Route path='addWathlist' element={<CreateWatchlist />} />
+                    <Route path='addWatchList' element={<CreateWatchlist />} />
                     <Route path='movie/:id' element={<MovieInfo />} />
                     <Route path='login' element={<Login />} />
                     <Route path='registration' element={<Registration />} />
