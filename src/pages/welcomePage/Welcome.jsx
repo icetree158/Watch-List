@@ -55,7 +55,7 @@ export default function Welcome() {
     const selectWatchlist = () => {
 
         if (!watchLists.length) {
-            return <Link style={{ color: '#f33f3f' }} to='/addWathlist'>У вас еще нету коллекций хотите создать?</Link>
+            return <Link style={{ color: '#f33f3f' }} to='/addWatchList'>У вас еще нету коллекций хотите создать?</Link>
         } else {
             return watchLists.map((e, i) => {
                 return <button onClick={elem => {

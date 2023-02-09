@@ -51,8 +51,9 @@
     .movies-container {
         margin-top: 70px;
         display: flex;
-        gap: 40px;
+        gap: 30px;
         flex-wrap: wrap;
-        
+        align-self: flex-start;
+
     }
 }

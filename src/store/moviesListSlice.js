@@ -24,20 +24,32 @@ const moviesList = createSlice({
         editList(state, action) {
 
             return {
-
                 ...state,
-                watchList: state.watchList.map(e => {
-                    if (e.name === action.payload.prevName) {
+                watchList: state.watchList.map(elem => {
+                    if (elem.name === action.payload.prevName) {
+
                         return {
                             'name': action.payload.name,
                             'title': action.payload.title,
                             'movies': action.payload.movies,
                         }
-                    } else return e
+                    } else return elem
                 })
+            }
+        },
+        removeWatchList(state, action) {
+            return {
+                ...state,
+                watchList: state.watchList.filter(e => !(e.name === action.payload.prevName))
+            }
+        },
+        editAddMovies(state, action) {
+            return {
+                ...state,
+                addedMovies: state.addedMovies.filter(e => !action.payload.id.includes(Number(e)))
             }
         }
     }
 })
-export const { addList, addMovie, editList } = moviesList.actions
+export const { addList, addMovie, editList, editAddMovies, removeWatchList } = moviesList.actions
 export default moviesList.reducer
