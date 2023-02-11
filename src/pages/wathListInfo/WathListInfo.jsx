@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import './wathListInfo.scss'
 import edit from '../../picture/Edit 1.png'
 import CardContainer from '../../components/UI/cardContainer/CardContainer'
@@ -11,9 +11,13 @@ export default function WathListInfo() {
   const { name } = useParams()
   const [infoWatchlist, setInfoWatchlist] = useState({ 'movies': [] })
   const allWatchList = useSelector(e => e.moviesList.watchList)
+  const navigate = useNavigate()
 
   useEffect(() => {
-    setInfoWatchlist(allWatchList.find(e => e.name === name))
+    if (allWatchList.find(e => e.name === name)) {
+      setInfoWatchlist(allWatchList.find(e => e.name === name))
+    }
+    else navigate('/*')
   }, [name, allWatchList])
 
   const timeWathing = () => {
@@ -54,7 +58,7 @@ export default function WathListInfo() {
             })}
           </div>
         </>
-        : <Link style={{color:'#f33f3f'}} to='/'>Пока здесь пусто... Хотите что-то добавить?</Link>
+        : <Link style={{ color: '#f33f3f' }} to='/'>Пока здесь пусто... Хотите что-то добавить?</Link>
       }
 
 

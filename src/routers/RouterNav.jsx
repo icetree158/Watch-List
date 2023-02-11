@@ -7,6 +7,7 @@ import EditWatchList from '../pages/editWatchList/EditWatchList';
 import Login from '../pages/login/Login';
 import MainPage from '../pages/MainPage';
 import MovieInfo from '../pages/movieInfo/MovieInfo';
+import NotFound from '../pages/notFoundPage/NotFound';
 import Registration from '../pages/registration/Registration';
 import WathListInfo from '../pages/wathListInfo/WathListInfo';
 import Welcome from '../pages/welcomePage/Welcome';
@@ -26,6 +27,7 @@ export default function RouterNav() {
                     <Route path='wathList' element={<EditProfile />} />
                     <Route path='watchList/:name' element={<WathListInfo/>} />
                     <Route path='watchList/:name/edit' element={<EditWatchList/>} />
+                    <Route path='*' element={<NotFound/>} />
                 </Route>
             </Routes>
         </>

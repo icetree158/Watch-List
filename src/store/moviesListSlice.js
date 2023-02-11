@@ -38,9 +38,13 @@ const moviesList = createSlice({
             }
         },
         removeWatchList(state, action) {
+          
+            let indexWatchist= state.watchList.findIndex((e)=>(e.name === action.payload.prevName))
+          
             return {
                 ...state,
-                watchList: state.watchList.filter(e => !(e.name === action.payload.prevName))
+                addedMovies:state.addedMovies.filter(e=> !state.watchList[indexWatchist].movies.find((mov=>(mov.kinopoiskId?mov.kinopoiskId:mov.filmId)===e))), 
+                watchList: state.watchList.filter((e)=>e.name!==action.payload.prevName)
             }
         },
         editAddMovies(state, action) {

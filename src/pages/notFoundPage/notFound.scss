@@ -1,0 +1,14 @@
+.notFoundcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    font-size : 300px;
+    flex-direction: column;
+ 
+    .spannotfound{
+        font-size: 80px;
+        
+    }
+}
