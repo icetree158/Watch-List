@@ -1,6 +1,6 @@
-import React, {useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Modal from '../../components/modal/Modal'
+import { useNavigate } from 'react-router-dom'
 import { addList } from '../../store/moviesListSlice'
 import './createWatchlist.scss'
 
@@ -8,15 +8,15 @@ export default function CreateWatchlist() {
   const dispatch = useDispatch()
   const [nameWatchList, setnameWatchList] = useState('')
   const [titleWatchList, settitleWatchList] = useState('')
-  const [modal, setModal] = useState(false)
   const [err, setErr] = useState('')
   const nameMovies = useSelector(e => e.moviesList.watchList)
+  const navigate = useNavigate()
 
 
   const addWatchList = () => {
     if (nameWatchList.length === 0 || titleWatchList.length === 0) {
       setErr("Есть пустые поля")
-      return 
+      return
     }
     if (nameMovies.some(e => e.name === nameWatchList)) {
       setErr("У вас уже есть такое название")
@@ -26,14 +26,14 @@ export default function CreateWatchlist() {
         "name": nameWatchList,
         "title": titleWatchList
       }))
-      setModal(true)
       setErr('')
       settitleWatchList('')
       setnameWatchList('')
+      navigate('/')
     }
   }
   return (
-    
+
     <div className='container-create-watchlist'>
       <span className='title-add' >Создайте новую колекцию</span>
       <span className='span-wathlist'>Название</span>
@@ -44,9 +44,7 @@ export default function CreateWatchlist() {
         <button className='add-List' onClick={addWatchList}>Создать коллекцию</button>
         <span className='err-mess'>{err}</span>
       </div>
-      <Modal active={modal} setActive={setModal} title="Коллекция созданна успешно">
 
-      </Modal>
     </div>
   )
 }

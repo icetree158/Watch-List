@@ -1,9 +1,17 @@
-.main-container{
-    background-color:#191919;
+.main-container {
+    background-color: #191919;
     display: flex;
     width: 75%;
     min-height: 100vh;
-    
+
     margin-left: 25%;
-    
+
+}
+
+@media screen and (max-width:1000px) {
+
+    .main-container {
+        margin-left: 10%;
+        width: 90%;
+    }
 }
