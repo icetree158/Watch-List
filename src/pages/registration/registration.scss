@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    min-height: 100%;
 
     .reg-wrapper {
         width: 50%;
@@ -10,6 +11,8 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+
+
 
         .preavatar {
             width: 200px;
@@ -67,6 +70,17 @@
                 line-height: 19px;
                 color: #F33F3F;
             }
+        }
+    }
+}
+
+// media
+@media screen and (max-width: 1000px) {
+    .reg-container {
+     
+
+        .reg-wrapper {
+            width: 100%;
         }
     }
 }

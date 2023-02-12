@@ -90,9 +90,36 @@
         width: 85%;
         justify-content: center;
     }
+}
 
+//media
+@media screen and (max-width:1000px) {
+    .wel-container {
 
+        .info {
+            font-size: 20px;
+            line-height: 25px;
 
+            .info-use {
+                margin-top: 10px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
 
+        .input-movies {
+            button {
+                width: 19%;
+            }
+        }
+
+        .popular-now {
+            font-size: 25px;
+        }
+
+        .movies-cards {
+            width: 100%;
+        }
+    }
 
 }

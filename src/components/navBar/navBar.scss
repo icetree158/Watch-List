@@ -16,7 +16,7 @@
 .header-wrapper {
 
     background: rgba(0, 0, 0, 1);
-    height: 100vh;
+    min-height: 100%;
     width: 25%;
     position: fixed;
     left: 0;
@@ -231,11 +231,12 @@
 
 // media
 
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1000px) {
     .header-wrapper {
         width: 10%;
         display: flex;
         align-items: center;
+        height: 100%;
 
 
         .header-container {
@@ -262,8 +263,14 @@
         }
 
         .header-container {
+
             display: block;
-            width: 70%;
+            width: 90%;
+
+            .hColection {
+                font-size: 35px;
+                margin-bottom: 40px;
+            }
 
             .container-inp {
                 margin-bottom: 40px;
@@ -275,7 +282,7 @@
 
 
             .user {
-                width: 65%;
+                width: 80%;
 
                 .my-drop {
                     margin-top: -110px;
@@ -283,15 +290,10 @@
                 }
             }
         }
-
-
     }
-
-
-
 }
 
-@media screen and (min-width: 999px) {
+@media screen and (min-width: 1001px) {
     .arrowAdaptive {
         display: none;
     }

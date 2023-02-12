@@ -1,9 +1,7 @@
-
-
 .card-container {
     background: #1F1F1F;
-    width: 180px;   
-   
+    width: 180px;
+
     display: flex;
     flex-direction: column;
 
@@ -16,13 +14,13 @@
     .poster-img {
         position: relative;
         align-self: center;
-        
+
         width: 180px;
         height: 257px;
     }
 
 
-    
+
 
     .name-movie {
         font-family: 'Montserrat', sans-serif;
@@ -33,6 +31,27 @@
         color: #E1E1E1;
         padding: 5px;
         width: 100%;
+    }
+
+}
+
+//media
+@media screen and (max-width: 999px) {
+    .card-container {
+        width: 90px;
+         .poster-img {
+            position: relative;
+            align-self: center;
+    
+            width: 90px;
+            height: 128.5px;
+        }
+        .name-movie {
+            
+            font-size: 10px;
+            line-height: 15px;
+            
+        }
     }
 
 }

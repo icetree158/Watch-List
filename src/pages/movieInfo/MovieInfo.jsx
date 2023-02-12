@@ -94,7 +94,7 @@ export default function MovieInfo() {
                         {infoMovie.ratingAgeLimits ? <div className='age-ocntainer'> <span className='ageSpan'>{' +' + infoMovie.ratingAgeLimits.slice(3)}</span></div>
                             : null}
                     </div>
-
+                    <img className='adaptive-img' src={infoMovie.posterUrl} alt={infoMovie.nameRu}/>
                     <div className='slogan-block'>
                         <span className='slogan-title'>Описание</span>
                         <br />

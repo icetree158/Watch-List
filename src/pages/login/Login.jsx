@@ -10,8 +10,10 @@ export default function Login() {
             <div className='login-wrapper'>
                 <CustomInput type='email'>Email*</CustomInput>
                 <CustomInput type='password'>Пароль*</CustomInput>
-                <RedBtn style={{marginTop:"30px"}}>Войти</RedBtn>
-                <div className='or-creacte'>Или <Link>Создайте аккаунт</Link></div>
+                <div className='select-buttons'>
+                    <RedBtn style={{ marginTop: "30px", width:'90px' }}>Войти</RedBtn>
+                    <div className='or-creacte'>Или <Link>Создайте аккаунт</Link></div>
+                </div>
             </div>
         </div>
     )
