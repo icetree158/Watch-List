@@ -57,3 +57,20 @@
 
     }
 }
+
+//media
+@media screen and (max-width:1000px) {
+    .container-edit-wathlist {
+        width: 100%;
+        .info-container {
+            width: 80%;
+        }
+        .movies-container {
+            
+            gap: 10px;
+           
+    
+        }
+    }
+
+}

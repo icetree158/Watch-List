@@ -11,8 +11,10 @@ import arrowAdaptive from '../../picture/pngegg.png'
 
 
 export default function NavBar() {
-  const nameWatchList = useSelector((e) => e.moviesList.watchList)
   const [activeDrop, setActive] = useState(false)
+  const [searchWathList, setSearchWathList] = useState('')
+  const [nameList, setNameList] = useState([])
+  const WatchLists = useSelector((e) => e.moviesList.watchList)
   const user = useSelector(e => e.user)
   const dispatch = useDispatch()
   const [isNavbar, SetIsNavbar] = useState(false)
@@ -21,11 +23,11 @@ export default function NavBar() {
   const showDrop = () => {
     setActive(!activeDrop)
   }
-
   const clickNotDrop = () => {
     setActive(false)
 
   }
+
   useEffect(() => {
     document.addEventListener(('click'), clickNotDrop)
 
@@ -38,9 +40,19 @@ export default function NavBar() {
     dispatch(setAuth())
 
   }
+
   useEffect(() => {
     SetIsNavbar(true)
   }, [location.pathname])
+
+
+  useEffect(() => {
+
+    if (searchWathList.length > 0) {
+      setNameList((WatchLists.filter(e => e.name.includes(searchWathList))))
+    } else setNameList(WatchLists)
+  }, [searchWathList, WatchLists])
+
   return (
 
     <header className={isNavbar ? 'header-wrapper' : 'header-wrapper active'}   >
@@ -51,7 +63,7 @@ export default function NavBar() {
         <h1 className='hColection'>Колекция фильмов</h1>
         <div className='container-inp'>
           <button><img src={search} alt="" /></button>
-          <input placeholder='Поиск' />
+          <input placeholder='Поиск' value={searchWathList} onChange={(e) => setSearchWathList(e.target.value)} />
         </div>
 
         <Link className='link-navBar' to='/'>
@@ -67,7 +79,7 @@ export default function NavBar() {
         <span className='colections'>Мои колекции</span>
         <div className='container-ul'>
           <ul>
-            {nameWatchList.map((e, i) => {
+            {nameList.map((e, i) => {
               return <Link to={'watchList/' + e.name} key={i}> <li >{e.name}</li></Link>
             })}
 

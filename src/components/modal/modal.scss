@@ -29,13 +29,13 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-   
+
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-   
+
     color: #E1E1E1;
 
 
@@ -63,10 +63,24 @@
     width: 15px;
     height: 15px;
 }
-.header{
+
+.header {
     align-self: center;
     font-size: 24px;
     margin: 25px 0;
-   
-   
+
+
+}
+
+//media
+@media screen and (max-width:1000px) {
+    .header {
+    
+        font-size: 20px;
+     
+    }
+
+    .modal_content.active {
+        width: 80%;
+    }
 }

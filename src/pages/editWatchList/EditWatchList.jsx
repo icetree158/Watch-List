@@ -43,7 +43,7 @@ export default function EditWatchList() {
             ...infoWatchlist,
             'movies': sortMovies
         })
-        console.log(elem.target.value)
+       
         setArrRemoveMovie(prev => [...prev, Number(elem.target.value)])
 
     }

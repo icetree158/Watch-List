@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    
     font-family: 'Roboto Condensed', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -19,8 +19,22 @@
         margin-bottom: 20px;
         font-size: 20px;
     }
-    .redArticle{
-        color:#F33F3F;
+
+    .redArticle {
+        color: #F33F3F;
         font-size: 32px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .info-card {
+        .title {
+            
+            font-size: 20px;
+        }
+        .redArticle {
+            color: #F33F3F;
+            font-size: 23px;
+        }
     }
 }

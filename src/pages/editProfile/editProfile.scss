@@ -31,7 +31,7 @@
                 line-height: 44px;
                 letter-spacing: 0em;
                 text-align: center;
-                
+
 
 
             }
@@ -41,10 +41,10 @@
                 font-style: normal;
                 font-weight: 400;
                 font-size: 16px;
-                
+
                 color: #F33F3F;
                 text-align: center;
-                
+
             }
         }
 
@@ -104,6 +104,27 @@
                 font-size: 16px;
                 line-height: 19px;
                 color: #F33F3F;
+            }
+        }
+    }
+}
+
+//media
+@media screen and (max-width:1000px) {
+    .edit-profile-container {
+       
+
+
+        .edit-profile-wrapper {
+            width: 100%;
+
+            .continer-top {
+                width: 80%;
+                .edit-span{
+                    
+                    line-height: 20px;
+                    font-size: 20px;
+                }
             }
         }
     }

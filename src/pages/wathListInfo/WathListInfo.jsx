@@ -26,9 +26,13 @@ export default function WathListInfo() {
       if (e.duration) {
         sum += e.duration
       }
-      if (e.filmLength) {
+      if (typeof(e.filmLength)==='string') {
         let splitArr = e.filmLength.split(':')
         sum += Number(splitArr[0]) * 60 + Number(splitArr[1])
+      }
+      if (typeof(e.filmLength)==='number') {
+        
+        sum += e.filmLength
       }
     })
     return Math.trunc(sum / 60) + " Ч " + sum % 60 + " Мин"

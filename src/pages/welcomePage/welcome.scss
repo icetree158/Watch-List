@@ -84,11 +84,15 @@
     }
 
     .movies-cards {
-        display: flex;
+        display: grid;
         gap: 10px;
-        flex-wrap: wrap;
         width: 85%;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         justify-content: center;
+
+
+
+
     }
 }
 
@@ -111,6 +115,10 @@
             button {
                 width: 19%;
             }
+
+            input::placeholder {
+                font-size: 12px;
+            }
         }
 
         .popular-now {
@@ -118,7 +126,9 @@
         }
 
         .movies-cards {
-            width: 100%;
+            width: 90%;
+            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+          
         }
     }
 

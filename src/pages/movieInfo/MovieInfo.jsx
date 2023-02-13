@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import getMovieById from '../../http/getMovieById'
 import './movieInfo.scss'
 import great from "../../picture/great _ 80.png"
 import normal from "../../picture/normal _35 and _80.png"
 import awful from "../../picture/awful _35.png"
+import Modal from "../../components/modal/Modal"
 import CircleLoader from '../../components/UI/Loaders/CircleLoader/CircleLoader'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addMovie } from '../../store/moviesListSlice'
 export default function MovieInfo() {
     const { id } = useParams()
     const [infoMovie, setInfoMovie] = useState({ "genres": [], "nameRu": "", "year": "", "filmLength": "", "ratingAgeLimits": "" })
     const [isLoad, setIsLoad] = useState(true)
     const [color, setColor] = useState()
+    const [modal, setModal] = useState(false)
+    const watchLists = useSelector((e) => e.moviesList.watchList)
     const addedmovies = useSelector(e => e.moviesList.addedMovies)
+    const dispath = useDispatch()
 
     useEffect(() => {
         getMovieById(id)
@@ -72,9 +77,21 @@ export default function MovieInfo() {
     }
     const checkAdd = () => {
         if (addedmovies.includes(Number(id))) {
-            return 
-        } else { return  <button className='add-to-wachlist'>Добавить в коллекцию</button> }
+            return
+        } else { return <button onClick={e => setModal(true)} className='add-to-wachlist'>Добавить в коллекцию</button> }
 
+    }
+    const selectWatchlist = () => {
+        if (!watchLists.length) {
+            return <Link style={{ color: '#f33f3f' }} to='/addWatchList'>У вас еще нету коллекций хотите создать?</Link>
+        } else {
+            return watchLists.map((e, i) => {
+                return <button onClick={elem => {
+                    dispath(addMovie({ 'infoMovie': infoMovie, 'numArr': i }))
+                    setModal(false)
+                }} key={e.name}>{e.name}</button>
+            })
+        }
     }
 
     return (
@@ -94,7 +111,7 @@ export default function MovieInfo() {
                         {infoMovie.ratingAgeLimits ? <div className='age-ocntainer'> <span className='ageSpan'>{' +' + infoMovie.ratingAgeLimits.slice(3)}</span></div>
                             : null}
                     </div>
-                    <img className='adaptive-img' src={infoMovie.posterUrl} alt={infoMovie.nameRu}/>
+                    <img className='adaptive-img' src={infoMovie.posterUrl} alt={infoMovie.nameRu} />
                     <div className='slogan-block'>
                         <span className='slogan-title'>Описание</span>
                         <br />
@@ -113,7 +130,9 @@ export default function MovieInfo() {
 
                 </div>
             </>}
-
+            <Modal active={modal} setActive={setModal} title='Выберете коллекцию'>
+                {selectWatchlist()}
+            </Modal>
         </div>
 
 

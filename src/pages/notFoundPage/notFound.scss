@@ -1,14 +1,32 @@
-.notFoundcontainer{
+.notFoundcontainer {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     color: white;
-    font-size : 300px;
+    font-size: 300px;
     flex-direction: column;
- 
-    .spannotfound{
+
+    .spannotfound {
         font-size: 80px;
-        
+
     }
+}
+
+@media screen and (max-width:1000px) {
+
+    .notFoundcontainer {
+        font-size:150px;
+        .img-sadFace {
+            width:120px;
+            height: 120px;
+           
+        }
+
+        .spannotfound {
+            font-size: 30px;
+
+        }
+    }
+
 }
