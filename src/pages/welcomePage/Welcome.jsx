@@ -58,7 +58,7 @@ export default function Welcome() {
             return <Link style={{ color: '#f33f3f' }} to='/addWatchList'>У вас еще нету коллекций хотите создать?</Link>
         } else {
             return watchLists.map((e, i) => {
-                return <button onClick={elem => {
+                return <button className='btn-select-watchlist' onClick={elem => {
                     dispath(addMovie({ 'infoMovie': activeCard, 'numArr': i }))
                     setModal(false)
                 }} key={e.name}>{e.name}</button>

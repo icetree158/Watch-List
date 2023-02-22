@@ -22,6 +22,7 @@
     left: 0;
     top: 0;
     z-index: 30;
+    
 
     .close_butt {
         display: none;
@@ -33,10 +34,9 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-
-
-
-        h1 {
+        
+        
+       h1 {
             color: rgba(243, 63, 63, 1);
 
             font-family: 'Roboto Condensed', sans-serif;
@@ -132,9 +132,6 @@
                 width: 100%;
                 padding-top: 20px;
 
-
-
-
                 li {
                     @include textStyle;
                     margin-bottom: 10px;
@@ -147,10 +144,12 @@
 
         .user {
 
-            position: absolute;
-            bottom: 0;
-            width: 85%;
-            margin-bottom: 20px;
+            position:relative;
+            bottom: -60px;
+            
+            width: 100%;
+            
+            
             border: 1px solid #E1E1E1;
             border-radius: 4px;
             display: flex;
@@ -282,11 +281,11 @@
 
 
             .user {
-                width: 80%;
+                bottom: -1vh; 
 
                 .my-drop {
                     margin-top: -110px;
-                    margin-left: -120px;
+                    margin-left: -160px;
                 }
             }
         }

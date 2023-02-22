@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './navBar.scss'
 import home from '../../picture/Home.png'
-import history from '../../picture/history.png'
 import search from '../../picture/search.png'
 import dots from '../../picture/dot3x.png'
 import { Link, useLocation } from 'react-router-dom'
@@ -71,7 +70,6 @@ export default function NavBar() {
         </Link>
 
 
-        <button className='nav-btn'> <img src={history} alt="" /> История</button>
         <Link className='link-navBar' to='/addWatchList'>
           <button className='add-List'>+ Добавить колекцию</button>
         </Link>

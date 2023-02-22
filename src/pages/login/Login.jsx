@@ -12,7 +12,7 @@ export default function Login() {
                 <CustomInput type='password'>Пароль*</CustomInput>
                 <div className='select-buttons'>
                     <RedBtn style={{ marginTop: "30px", width:'90px' }}>Войти</RedBtn>
-                    <div className='or-creacte'>Или <Link>Создайте аккаунт</Link></div>
+                    <div className='or-creacte'>Или <Link to='/registration'>Создайте аккаунт</Link></div>
                 </div>
             </div>
         </div>

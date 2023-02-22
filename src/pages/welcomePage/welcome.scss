@@ -71,7 +71,7 @@
             color: #000000;
             border-radius: 6px;
             height: 41px;
-            min-width: 7%;
+            min-width: 9%;
         }
     }
 
@@ -94,6 +94,13 @@
 
 
     }
+}
+.btn-select-watchlist{
+    border-bottom: solid 1px white;
+    width: fit-content;
+    align-self: center;
+    margin-top: 7px;
+    
 }
 
 //media
