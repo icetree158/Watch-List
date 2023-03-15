@@ -1,1 +1,1 @@
-
+Can create custom watchlist
